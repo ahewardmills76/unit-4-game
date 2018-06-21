@@ -1,0 +1,76 @@
+
+body {
+    background-color: black
+}
+
+.jumbotron {
+    font-family: 'Eater', cursive;
+    background-color: black;
+    color: red;
+    height: 300px;
+}
+
+#rtj_logo {
+    height: auto; 
+    width: auto; 
+    max-width: 400px; 
+    max-height: 300px;
+    float: left;
+    margin-right: 50px;
+}
+.display-4 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.btn.btn-danger {
+    position: relative
+    bottom 20px
+}
+
+#rtj-background {
+    height: auto; 
+    width: auto; 
+    max-width: 400px; 
+    max-height: 400px; 
+}
+
+.container {
+    margin-left: 100px;
+}
+
+
+.card-body {
+    height:100px;
+    
+}
+
+
+#blue {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}
+#yellow {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}#green {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}#pink {
+    height: auto; 
+    width: auto; 
+    max-width: 50px; 
+    max-height: 50px;
+}
+
+
+#musicToggle {
+    position: relative
+    top 200px
+}
