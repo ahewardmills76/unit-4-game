@@ -1,17 +1,20 @@
-
 $(document).ready(function() {
+  //THIS GENERATES THE NUMBER THAT PLAYERS ARE TARGETING
    var targetNumber = Math.floor(Math.random()*101+19)
+   /*THIS WRITES THE TEXT TO THE SPAN WITH AN ID OF 'TARGET-SCORE' 
+   USING THE INFORMATION FROM THE VARIABLE 'TARGETNUMBER'*/
    $('#target-score').text(targetNumber);
-
+//VARIABLES
 var jewelValues = []
 var totalScore= 0;
 var totalWins= 0;
 var totalLosses= 0;
-
+/*THIS WRITES THE TEXT TO THE SPAN WITH AN ID OF 'WINS' OR 'LOSSES' 
+USING THE INFORMATION FROM THE VARIABLES 'TOTALWINS AND 'TOTAL LOSSES'*/
 $('#wins').text(totalWins);
 $('#losses').text(totalLosses);
 
-
+//THIS FUNCTION POPULATES THE ARRAY OF VALUES FOR EACH INDIVIDUAL JEWEL
 function jewelNumberGenerator (){
   for (var i = 0; i < 4; i++) {
     var value = Math.floor(Math.random()*11+1);
@@ -19,9 +22,10 @@ function jewelNumberGenerator (){
   }
   
 }
-
+//FUNCTION IS CALLED
 jewelNumberGenerator();
 
+//FUNCTION THAT INITIALIZES THE GAME UPON WIN OR LOSS
 function initialize(){
   targetNumber=Math.floor(Math.random()*101+19);
   $('#target-score').text(targetNumber);
@@ -31,28 +35,29 @@ function initialize(){
   $('#total-score').text(totalScore);
   } 
 
-
+//FUNCTION THAT RUNS UPON WINNING
 function youWin(){
-  alert("You won!!!");
+  alert("You win!!!");
   totalWins++;	
   $('#wins').text(totalWins);
-  initialize();
+  initialize();//INITIALIZE IS CALLED
   }
   
-  
+ //FUNCTION THAT RUNS UPON LOSING 
 function youLose(){
   alert ("You lose!!!");
   totalLosses++;
   $('#losses').text(totalLosses);
-  initialize();
+  initialize();//INITIALIZE IS CALLED
   }
   
  
-  
+  /*INDIVIDUAL BUTTON FUNCTIONS THAT CREATE CLICK EVENTS, ASSIGN VALUES BASED ON THE GLOBAL ARRAY, 
+  ADD TO TOTAL SCORE, AND PROVIDE WIN/LOSS CONDITIONALS*/
 $('#blue').on('click', function(){
     totalScore = totalScore + jewelValues[0]  
     $('#total-score').text(totalScore);
-    console.log(totalScore);
+    
 
     if (totalScore === targetNumber) {
       youWin();
@@ -67,7 +72,7 @@ $('#blue').on('click', function(){
   $('#yellow').on('click', function(){
     totalScore = totalScore + jewelValues[1]  
     $('#total-score').text(totalScore);
-    console.log(totalScore);
+    
 
     if (totalScore === targetNumber) {
       youWin();
@@ -81,7 +86,7 @@ $('#blue').on('click', function(){
   $('#green').on('click', function(){
     totalScore = totalScore + jewelValues[2]    
     $('#total-score').text(totalScore);
-    console.log(totalScore);
+    
 
     if (totalScore === targetNumber) {
       youWin();
@@ -95,7 +100,7 @@ $('#blue').on('click', function(){
   $('#pink').on('click', function(){
     totalScore = totalScore + jewelValues[3]  
     $('#total-score').text(totalScore);
-    console.log(totalScore);
+    
 
     if (totalScore === targetNumber) {
       youWin();
